@@ -5,11 +5,11 @@ import pickle
 app = Flask(__name__)
 model = pickle.load(open('model1.pkl', 'rb'))
 
-@app.route('/Boston')
+@app.route('/Boston_home')
 def home():
     return render_template('index1.html')
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict_price',methods=['POST'])
 def predict():
     '''
     For rendering results on HTML GUI
@@ -32,6 +32,6 @@ def predict_api():
 
     output = prediction[0]
     return jsonify(output)
-
+'''
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True)'''
